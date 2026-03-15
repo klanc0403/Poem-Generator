@@ -24,6 +24,8 @@ function generatePoem(event) {
 
   let instructionsInput = document.querySelector("#user-instructions");
   let poemElement = document.querySelector("#poem");
+  poemElement.classList.remove("hidden");
+  poemElement.innerHTML = `Generating a poem about ${instructionsInput.value}...`;
 
   let apiKey = "0232oa2bd084ect6f17c5fee93b97744";
   let prompt = `Generate an English poem about ${instructionsInput.value}`;
@@ -34,7 +36,6 @@ function generatePoem(event) {
     prompt,
   )}&context=${encodeURIComponent(context)}&key=${apiKey}`;
 
-  poemElement.innerHTML = "Generating poem...";
 
   axios.get(apiUrl).then(displayPoem);
 }
