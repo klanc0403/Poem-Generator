@@ -71,6 +71,10 @@ form {
     border-radius: 10px;
 }
 
+.hidden {
+    display: none;
+}
+
 footer {
     text-align: center;
     font-size: 12px;
